@@ -11,17 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700,700i" rel="stylesheet">
     <!-- Personal CSS -->
     <link rel="stylesheet" href="assets/style.css" type="text/css"/>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.8.2/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.8.2/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.8.2/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.8.2/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.8.2/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-
   </head>
 
   <body>
@@ -43,15 +32,33 @@
       <div class="login-form">
         <input id="txtEmail" type="email" name="Username" placeholder="Email">
         <br><br>
-        <input type="password" name="Password" placeholder="Password">
+        <input id="txtPassword" type="password" name="Password" placeholder="Password">
         <button id="btnLogin" class="sampletxt">Login</button>
+        <!-- GOOGLE LOGIN DO AFTER -->
+        <!-- <button id="btnLogin" class="sampletxt" onclick="googleLogin()">Login with Google</button> -->
       </div>
 
       <p><a href="#">Forget your password?</a></p>
       <p>Don't have an account? <a href="#">Make One!</a></p>
     </div>
 
-    <script type="text/javascript" src="login.js">
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBJveqIrB6z9o4lF2cWMNH1uT9fUGLXVQo",
+        authDomain: "sav-home.firebaseapp.com",
+        databaseURL: "https://sav-home.firebaseio.com",
+        projectId: "sav-home",
+        storageBucket: "sav-home.appspot.com",
+        messagingSenderId: "837512468886"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="auth.js"></script>
+    <script>
+    window.onload=login(); // email and password login
 
     </script>
 
